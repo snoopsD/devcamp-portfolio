@@ -7,5 +7,5 @@ h1 Portfolio Items
     br
     =portfolio_item.body
     br
-    =image_tag portfolio_item.thumb_image
+    =image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?
 
