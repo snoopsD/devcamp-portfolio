@@ -4,7 +4,7 @@ h1 Portfolio Items
 
 -@portfolio_items.each do |portfolio_item|
   p
-    =portfolio_item.title 
+    =link_to portfolio_item.title, portfolio_path(portfolio_item)
     br
     =portfolio_item.subtitle 
     br
@@ -12,5 +12,5 @@ h1 Portfolio Items
     br
     =image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?
     br
-    =link_to "Edit portfolio", edit_portfolio_path(portfolio_item.id)
+    =link_to "Edit portfolio", edit_portfolio_path(portfolio_item)
 
