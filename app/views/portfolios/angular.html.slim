@@ -1,0 +1,17 @@
+h1 Angular Portfolio Items
+
+=link_to "Create new  Item", new_portfolio_path
+
+-@angular_portfolio_items.each do |portfolio_item|
+  p
+    =link_to portfolio_item.title, portfolio_show_path(portfolio_item)
+    br
+    =portfolio_item.subtitle 
+    br
+    =portfolio_item.body
+    br
+    =image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?
+    br
+    =link_to "Edit portfolio", edit_portfolio_path(portfolio_item)
+    =link_to "Delete portfolio", portfolio_path(portfolio_item), method: :delete, data: {confirm: "Are you sure?"}
+
