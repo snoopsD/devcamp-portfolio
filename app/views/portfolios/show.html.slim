@@ -2,8 +2,17 @@
 
  h1 Show Portfolio item
  p
-  em =@portfolio_item.title
+  em = @portfolio_item.title
   br
-  =@portfolio_item.subtitle
+  = @portfolio_item.subtitle
   br
-  =@portfolio_item.body
+  = @portfolio_item.body
+  br
+ h2 Technologies used:
+ p 
+  -@portfolio_item.technologies.each do |technologies| 
+    = technologies.name
+    br
+    
+
+
