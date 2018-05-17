@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Deep Dive into Ror
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags 
+
+  body
+    p .class="notice" = notice
+    p .class="alert"  = alert
+    
+    -if current_user
+      = link_to "Logout", destroy_user_session_path, method: :delete 
+      br
+    -else
+      = link_to "Login", new_user_session_path
+      br
+    = yield 
+  </body>
+</html>
