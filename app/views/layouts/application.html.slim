@@ -18,5 +18,8 @@ html
       = link_to "Login", new_user_session_path
       br
     = yield 
+    - if session[:source]
+      p Thanks for visiting me from #{ session[:source] }
+
   </body>
 </html>
