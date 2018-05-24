@@ -11,12 +11,15 @@ html
     p .class="notice" = notice
     p .class="alert"  = alert
     
-    -if current_user
-      = link_to "Logout", destroy_user_session_path, method: :delete 
-      br
-    -else
-      = link_to "Login", new_user_session_path
-      br
+    p
+      -if current_user.is_a?(User)
+        = link_to "Logout", destroy_user_session_path, method: :delete 
+      -else
+        = link_to "Login", new_user_session_path
+
     = yield 
+    - if session[:source]
+      p Thanks for visiting me from #{ session[:source] }
+
   </body>
 </html>
