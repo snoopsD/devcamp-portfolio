@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :load_portfolio, only: [:edit, :update, :show, :destroy]
+  layout 'portfolio'
 
   def index
     @portfolio_items = Portfolio.all
