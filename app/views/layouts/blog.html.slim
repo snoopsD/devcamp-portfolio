@@ -18,8 +18,4 @@ html
 
     = yield     
 
-    - if session[:source]
-      p Thanks for visiting me from #{ session[:source] }
-
-  </body>
-</html>
+    =source_helper("blog")
