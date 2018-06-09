@@ -1,7 +1,11 @@
-div .class="links"
-  div =link_to "Home", root_path
-  div =link_to "About Me", about_path
-  div =link_to "Contact", contact_path    
-  div =link_to "Blog", blogs_path
-  div =link_to "Portfolio", portfolios_path
-p
+div class="#{links}"
+  p    
+    =link_to "Home", root_path 
+  p
+    =link_to "About Me", about_path
+  p 
+    =link_to "Contact", contact_path    
+  p 
+    =link_to "Blog", blogs_path
+  p 
+    =link_to "Portfolio", portfolios_path
